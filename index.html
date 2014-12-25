@@ -1,79 +1,148 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="full-screen" content="true">
+	<meta name="screen-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="360-fullscreen" content="true">
+	<title>超级电灯泡</title>
+	</script>
+	<script type="text/javascript" src="./diandengpao_files/jquery.min.js"></script>
+	 <script type="text/javascript" src="./diandengpao_files/game.js"></script>
+<style type="text/css">
+body{margin:0;padding:0;}
+.btn {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 12px;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	background-color: #3498db;
+	color: #fff;
+	display:inline;
+	margin-right:10px;
+}
+.result-container {
+	display: none;
+}
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Bbddaw : ">
+.result-container {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.9);
+	color: #fff;
+	padding-top: 50px;
+}
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+.result-container>p {
+	margin: 20px 0 40px 0;
+	font-size: 18px;
+}
 
-    <title>Bbddaw</title>
-  </head>
+.play-again {
+	background-color: #1abc9c;
+}
 
-  <body>
+.title {
+	color: #fff;
+	font-size: 13px;
+}
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/de777Gracia/bbddaw">View on GitHub</a>
+#switchBtn {
+	background: #1abc9c;
+}
+.rcontainer{
+	position:relative;
+	top:20%;
+	width:80%;
+	margin:auto;
+}
 
-          <h1 id="project_title">Bbddaw</h1>
-          <h2 id="project_tagline"></h2>
+#share-wx{
+	background:rgba(0,0,0,0.8);
+	position:absolute;top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	display:none;
+}
+#wx-qr{
+	background:rgba(0,0,0,0.8);
+	position:absolute;top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	display:none;
+}
+.lis{ left: 0;overflow: hidden;width: 100%;z-index: 122;margin-battom:10px;}
+.lis a{float: left;width:99.9%;margin-right:1px;color:#ffffff;font-size:14px;text-decoration: none;background:#606783;text-align: center;opacity: 0.8;line-height:30px;font-weight: bold;font-family:"微软雅黑"；}
+.lis a img{position: relative;top: 1px;}
+</style>
+</head>
+<body bgcolor="#AABBCC"><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="./diandengpao_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div>
+	<script type="text/javascript" src="./diandengpao_files/code.js"></script><div id="wx-qr" style="position: fixed; top: 0px; left: 0px; width: 100%; z-index: 10000; display: none; background: rgba(0, 0, 0, 0.8);"><p style="text-align: center; width: 220px; color: rgb(255, 255, 255); margin: 50px auto 0px; font-weight: bold; font-style: normal; font-variant: normal; font-size: 16px; line-height: normal; font-family: Arial, Helvetica, &#39;Microsoft Yahei&#39;, 微软雅黑, STXihei, 华文细黑, sans-serif;">分享给朋友一起玩！</p></div>
+	<div align="center">
+            <div style="height: 60px;">
+            </div>
+			<div style="font-weight: bold; color: #3498db;">
+				<span id="movecount">0</span> 步
+			</div>
+			<h1 class="title">
+				专注灯泡30年,把所有电灯泡都点亮吧!
+			</h1>
+			<table border="4" cellpadding="0" cellspacing="2" bgcolor="#CCCCCC" id="table"><tbody><tr><td><img src="./diandengpao_files/light103.png" border="0" onclick="Clicked(0,0)"></td><td><img src="./diandengpao_files/light0.png" border="0" onclick="Clicked(1,0)"></td><td><img src="./diandengpao_files/light0.png" border="0" onclick="Clicked(2,0)"></td><td><img src="./diandengpao_files/light103.png" border="0" onclick="Clicked(3,0)"></td></tr><tr><td><img src="./diandengpao_files/light0.png" border="0" onclick="Clicked(0,1)"></td><td><img src="./diandengpao_files/light0.png" border="0" onclick="Clicked(1,1)"></td><td><img src="./diandengpao_files/light103.png" border="0" onclick="Clicked(2,1)"></td><td><img src="./diandengpao_files/light103.png" border="0" onclick="Clicked(3,1)"></td></tr><tr><td><img src="./diandengpao_files/light103.png" border="0" onclick="Clicked(0,2)"></td><td><img src="./diandengpao_files/light103.png" border="0" onclick="Clicked(1,2)"></td><td><img src="./diandengpao_files/light0.png" border="0" onclick="Clicked(2,2)"></td><td><img src="./diandengpao_files/light0.png" border="0" onclick="Clicked(3,2)"></td></tr><tr><td><img src="./diandengpao_files/light0.png" border="0" onclick="Clicked(0,3)"></td><td><img src="./diandengpao_files/light103.png" border="0" onclick="Clicked(1,3)"></td><td><img src="./diandengpao_files/light103.png" border="0" onclick="Clicked(2,3)"></td><td><img src="./diandengpao_files/light0.png" border="0" onclick="Clicked(3,3)"></td></tr></tbody></table>
+			<br>
+			<table>
+				<tbody><tr>
+					<td>
+						<div class="btn play-again" onclick="javascript:Init(true)">
+							重新开始
+						</div>
+					</td>
+				</tr>
+			</tbody></table>
+			<div class="result-container" id="result_container" style="display: none;">
+				<div class="rcontainer">
+					<p id="result"></p>
+					<div class="btn play-again" onclick="Init(true)">
+							再来一盘
+						</div>
+				</div>
+			</div>
+		</div>
+		<div id="share" style="display: none">
+			<img width="100%" src="./diandengpao_files/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById(&#39;share&#39;).style.display=&#39;none&#39;;">
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+			var myData = {};
+			function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName = score+"步";
+				if(score>0){
+					dp_share();
+					if (confirm("真行,你用了"+score+"步点亮了所有的灯！要不要通知下小伙伴们呢？")){
+						
+					}
+				}
+			}
+			</script>
+			<script language="JavaScript">
+   				draw();
+  				Init(true);
+			</script>
+</div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/de777Gracia/bbddaw/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/de777Gracia/bbddaw/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+<div>
+</script>
+</div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Bbddaw maintained by <a href="https://github.com/de777Gracia">de777Gracia</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
-</html>
+<div id="cproIframe1Wrap_placeholder" style="width: 100%; height: 108px; margin: 0px; padding: 0px; border: none; background: none;"></div><embed id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd" type="application/thunder_download_plugin" height="0" width="0"></body></html>
