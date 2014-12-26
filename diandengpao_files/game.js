@@ -126,7 +126,7 @@ function OverTest() {
 			}
 		}
 	}
-    window.location.href="objc://"+"gameover"; // by michael
+    // window.location.href="objc://"+"gameover"; // by michael
 	var a="用 "+NMoves+" 步点亮了所有的盏灯。";
 	$("#result").html("哇！你"+a+"你"+c);
 	$("#result_container").show();
