@@ -8,7 +8,15 @@
 	<meta name="x5-fullscreen" content="true">
 	<meta name="360-fullscreen" content="true">
 	<title>超级电灯泡</title>
-	</script>
+	<style type="text/css">
+    {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none; / Disable selection/copy in UIWebView */
+    }
+    </style>
+    <script type="text/javascript">
+        document.ontouchmove = function(e) {e.preventDefault()};
+    </script>
 	<script type="text/javascript" src="./diandengpao_files/jquery.min.js"></script>
 	 <script type="text/javascript" src="./diandengpao_files/game.js"></script>
 <script type="text/javascript">
